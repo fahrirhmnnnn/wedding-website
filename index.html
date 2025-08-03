@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
@@ -21,23 +21,29 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
+    <!-- Link Aos -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Section Hero Start -->
     <section id="hero"
         class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
         <main>
-            <h4>Kepada Bapak/Ibu/Saudara/i, </h4>
+            <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
             <h1>Fahri & Rahman</h1>
             <p>Akan melangsungkan resepsi pernikahan dalam:</p>
             <div class="simply-countdown"></div>
-            <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+            <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
         </main>
     </section>
+    <!-- Section Hero End -->
 
+    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
         <div class="container">
             <a class="navbar-brand" href="#">Cuy Wedding</a>
@@ -56,22 +62,27 @@
                         <a class="nav-link" href="#home">Home</a>
                         <a class="nav-link" href="#info">Info</a>
                         <a class="nav-link" href="#story">Story</a>
-                        <a class="nav-link" href="#gallery">Galerry</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
                         <a class="nav-link" href="#rsvp">RSVP</a>
-                        <a class="nav-link" href="#gift">Gifts</a>
+                        <a class="nav-link" href="#gifts">Gifts</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Navbar End -->
+
+    <!--Section Home Start  -->
     <section id="home" class="home">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <h2>Acara Pernikahan</h2>
-                    <h3>Diselenggarakan pada 20 Juli 2025 di Tanggerang Selatan, Banten.</h3>
-                    <p>Oleh karena itu, dengan segala hormat, kami bermaksud mengundang Bapak/Ibu, Saudara/i, untuk
+                    <h2 data-aos="fade-up" data-aos-delay="100">Acara Pernikahan</h2>
+                    <h3 data-aos="fade-up" data-aos-delay="300">Diselenggarakan pada 20 Juli 2025 di Tanggerang Selatan,
+                        Banten.</h3>
+                    <p data-aos="fade-up" data-aos-delay="500">Oleh karena itu, dengan segala hormat, kami bermaksud
+                        mengundang Bapak/Ibu, Saudara/i, untuk
                         hadir
                         pada acara pernikahan kami.
                     </p>
@@ -80,13 +91,13 @@
             <div class="row couple">
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-8 text-end">
+                        <div class="col-8 text-end" data-aos="fade-right" data-aos-delay="100">
                             <h3>Fahri</h3>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium neque ipsam at,
                                 mollitia esse velit.</p>
                             <p>Putra dari Bpk. Lorem <br> dan <br> Ibu Ipsum</p>
                         </div>
-                        <div class="col-4">
+                        <div class="col-4" data-aos="zoom-in" data-aos-delay="300">
                             <img src="img/mp.png" alt="Fahri" class="img-responsive rounded-circle">
                         </div>
                     </div>
@@ -94,10 +105,10 @@
                 <span class="heart"><i class="bi bi-heart-fill"></i></span>
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-4" data-aos="zoom-in">
                             <img src="img/mw.png" alt="Rahman" class="img-responsive rounded-circle">
                         </div>
-                        <div class="col-8">
+                        <div class="col-8" data-aos="fade-left" data-aos-delay="300">
                             <h3>Rahman</h3>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium neque ipsam at,
                                 mollitia esse velit.</p>
@@ -108,22 +119,32 @@
             </div>
         </div>
     </section>
+    <!--Section Home Start  -->
 
+    <!-- Section Info Start -->
     <section id="info" class="info">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center">
-                    <h2>Informasi Acara</h2>
-                    <p class="alamat">Alamat: Jl. Kihajar Dewantara No.2-4, Ciputat, Kec.Ciputat, Kota Tangerang
+                    <h2 data-aos="fade-up">Informasi Acara</h2>
+                    <p class="alamat" data-aos="fade-up" data-aos-delay="200">Alamat: Jl. Kihajar Dewantara No.2-4,
+                        Ciputat, Kec.Ciputat, Kota Tangerang
                         Selatan, Banten</p>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.642612827474!2d106.7476229!3d-6.3105934999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef7fc1269ac9%3A0xbaca7001a634ec1c!2sMasjid%20Agung%20Al%20Jihad!5e0!3m2!1sid!2sid!4v1752568943357!5m2!1sid!2sid"
+                        data-aos="zoom-in" data-aos-delay="400" width="100%" height="250" style="border:0;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                     <a href="https://maps.app.goo.gl/7dctHVk4v5VtgWKa6" target="_blank"
-                        class="btn btn-light btn-sm my-4">Klik untuk membuka Peta</a>
+                        class="btn btn-light btn-sm my-4" data-aos="fade-up" data-aos-delay="600">Klik untuk membuka
+                        Peta</a>
                 </div>
             </div>
 
             <div class="row justify-content-center mt-4">
                 <div class="col-md-5 col-10">
-                    <div class="card text-center text-bg-light mb-5">
+                    <div class="card text-center text-bg-light mb-5" data-aos="fade-right">
                         <div class="card-header">Akad Nikah</div>
                         <div class="card-body">
                             <div class="row justify-content-center">
@@ -143,7 +164,7 @@
                     </div>
                 </div>
                 <div class="col-md-5 col-10">
-                    <div class="card text-center text-bg-light">
+                    <div class="card text-center text-bg-light" data-aos="fade-left" data-aos-delay="200">
                         <div class="card-header">Resepsi</div>
                         <div class="card-body">
                             <div class="row justify-content-center">
@@ -165,25 +186,27 @@
             </div>
         </div>
     </section>
+    <!-- Section Info End -->
 
+    <!-- Section Story Start -->
     <section id="story" class="story">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center">
                     <span>Bagaimana Cinta Kami Bersemi</span>
-                    <h2>Cerita Kami</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, praesentium voluptatibus!
-                        Explicabo totam molestiae repudiandae.</p>
+                    <h2 data-aos="fade-up">Cerita Kami</h2>
+                    <p class="typewriter" data-aos="fade-up" data-aos-delay="500"
+                        data-text="Ini adalah cerita cinta kami yang penuh makna">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <ul class="timeline">
-                        <li>
+                        <li data-aos="fade-up" data-aos-delay="100">
                             <div class="timeline-image" style="background-image: url(img/b.pertamabertemu.png);"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h3>Pertama Bertemu</h3>
+                                    <h3>Perkenalan</h3>
                                     <span>17 Agustus 1945</span>
                                 </div>
                                 <div class="timeline-body">
@@ -192,12 +215,12 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted">
+                        <li class="timeline-inverted" data-aos="fade-up" data-aos-delay="200">
                             <div class="timeline-image" style="background-image: url(https://picsum.photos/300/300);">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h3>Mulai Serius</h3>
+                                    <h3>Awal Hubungan</h3>
                                     <span>20 April 2024</span>
                                 </div>
                                 <div class="timeline-body">
@@ -211,7 +234,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h3>Tunangan</h3>
+                                    <h3>Lamaran</h3>
                                     <span>17 Juni 2025</span>
                                 </div>
                                 <div class="timeline-body">
@@ -221,58 +244,75 @@
                                 </div>
                             </div>
                         </li>
+                        <li class="timeline-inverted" data-aos="fade-up" data-aos-delay="200">
+                            <div class="timeline-image" style="background-image: url(https://picsum.photos/300/300);">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>Pernikahan</h3>
+                                    <span>20 April 2024</span>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae animi
+                                        deleniti pariatur voluptate aliquid tenetur doloremque repellendus quaerat.</p>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Section Story End -->
 
-    <section id="gallery" class="galerry">
+    <!-- Section Gallery Start -->
+    <section id="gallery" class="gallery">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center">
-                    <span>Memori Kisah Kami</span>
-                    <h2>Galerry Foto</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, sapiente?</p>
+                    <h2 data-aos="fade-up">Gallery Foto</h2>
+                    <p class="typewriter" data-aos="fade-up" data-aos-delay="500"
+                        data-text="Ini adalah momen spesial kami yang terekam dalam bingkai kenangan.">
+                    </p>
                 </div>
             </div>
             <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-                <div class="col mt-3">
-                    <a href="img/gallery/gwedding.png" data-toggle="lightbox" data-caption="Sandhika & Nofa 1"
+                <div class="col mt-3" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="img/gallery/gwedding.png" data-toggle="lightbox" data-caption="Fahri & Rahman"
                         data-gallery="mygallery">
                         <img src="img/gallery/thumbnail/gthumbwedding.png" alt="Fahri & Rahman 1"
                             class="img-fluid w-100 rounded">
                     </a>
                 </div>
-                <div class="col mt-3">
+                <div class="col mt-3" data-aos="zoom-in" data-aos-delay="200">
                     <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox"
                         data-caption="Fahri & Rahman 2" data-gallery="mygallery">
                         <img src="https://picsum.photos/id/300/300/400" alt="Fahri & Rahman 2"
                             class="img-fluid w-100 rounded">
                     </a>
                 </div>
-                <div class="col mt-3">
+                <div class="col mt-3" data-aos="zoom-in" data-aos-delay="300">
                     <a href="https://picsum.photos/id/301/1200/768" data-toggle="lightbox"
                         data-caption="Fahri & Rahman 3" data-gallery="mygallery">
                         <img src="https://picsum.photos/id/301/300/400" alt="Fahri & Rahman 3"
                             class="img-fluid w-100 rounded">
                     </a>
                 </div>
-                <div class="col mt-3">
+                <div class="col mt-3" data-aos="zoom-in" data-aos-delay="400">
                     <a href="https://picsum.photos/id/302/1200/768" data-toggle="lightbox"
                         data-caption="Fahri & Rahman 4" data-gallery="mygallery">
                         <img src="https://picsum.photos/id/302/300/400" alt="Fahri & Rahman 4"
                             class="img-fluid w-100 rounded">
                     </a>
                 </div>
-                <div class="col mt-3">
+                <div class="col mt-3" data-aos="zoom-in" data-aos-delay="500">
                     <a href="https://picsum.photos/id/304/1200/768" data-toggle="lightbox"
                         data-caption="Fahri & Rahman 5" data-gallery="mygallery">
                         <img src="https://picsum.photos/id/304/300/400" alt="Fahri & Rahman 5"
                             class="img-fluid w-100 rounded">
                     </a>
                 </div>
-                <div class="col mt-3">
+                <div class="col mt-3" data-aos="zoom-in" data-aos-delay="600">
                     <a href="https://picsum.photos/id/305/1200/768" data-toggle="lightbox"
                         data-caption="Fahri & Rahman 6" data-gallery="mygallery">
                         <img src="https://picsum.photos/id/305/300/400" alt="Fahri & Rahman 6"
@@ -282,13 +322,107 @@
             </div>
         </div>
     </section>
+    <!-- Section Gallery Start -->
 
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-10 text-center">
+                    <h2 data-aos="fade-up">Konfirmasi Kehadiran</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Isi form di bawah ini untuk melakukan konfirmasi
+                        kehadiran.</p>
+                </div>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+            <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
+                action="https://script.google.com/macros/s/AKfycbwpUD1X-m_Q9GGN-VLfzlKPKOVArthHHBWC6YdmPMl-9nTZD1z5xE3KaPpb-VeKfD87-A/exec"
+                id="my-form">
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="jumlah" class="form-label">Jumlah</label>
+                        <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1"
+                            value="1">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Konfirmasi</label>
+                        <select name="status" id="status" class="form-select">
+                            <option selected>Pilih salah satu</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 35px;">
+                    <button class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+        </div>
+    </section>
+
+    <section id="gifts" class="gifts">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-10 text-center">
+                    <h2 data-aos="fade-up">Gifts</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Terimakasih telah mengisi kebahagiaan dan kegembiraan di
+                        pernikahan kami dengan kehadiran dan
+                        hadiah indah anda.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center text-center">
+                <div class="col-md-6">
+                    <ul class="list-group shadow-sm rounded" data-aos="zoom-in" data-aos-delay="400">
+                        <li class="list-group-item d-flex flex-column align-items-center">
+                            <img src="img/rekening/bca.jpg" alt="Logo BCA" class="rekening-logo">
+                            <small class="text-muted">123456789 - FAHRI RAHMAN</small>
+                        </li>
+                        <li class="list-group-item d-flex flex-column align-items-center">
+                            <img src="img/rekening/mandiri.jpg" alt="Logo Mandiri" class="rekening-logo">
+                            <small class="text-muted">987654321 - FAHRI RAHMAN</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <small class="block">&copy; 2025 Cuy Wedding. All Rights Reserved.</small>
+                    <small class="block">Design by <a href="https://instagram.com/fahrirhmnnn">@fahrirhmnnnn</a></small>
+
+                    <ul class="mt-3">
+                        <li><a href=""><i class="bi bi-instagram"></i></a></li>
+                        <li><a href=""><i class="bi bi-facebook"></i></a></li>
+                        <li><a href=""><i class="bi bi-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="audio-container">
+        <audio id="song" autoplay loop>
+            <source src="audio/1.mp3" type="audio/mp3">
+        </audio>
+
+        <div class="audio-icon-wrapper" style="display: none;">
+            <i class="bi bi-disc"></i>
+        </div>
+    </div>
 
     <script>
         simplyCountdown('.simply-countdown', {
@@ -305,7 +439,6 @@
         });
     </script>
 
-    <!-- Javascript -->
     <script>
         const stickyTop = document.querySelector('.sticky-top');
         const offcanvas = document.querySelector('.offcanvas');
@@ -317,8 +450,134 @@
         offcanvas.addEventListener('hidden.bs.offcanvas', function () {
             stickyTop.style.overflow = 'hidden';
         });
-
     </script>
+    <script>
+        const rootElement = document.querySelector(":root");
+        const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+        const audioIcon = document.querySelector('.audio-icon-wrapper i');
+        const song = document.querySelector('#song');
+        let isPlaying = false;
+
+        function disableScroll() {
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            window.onscroll = function () {
+                window.scrollTo(scrollTop, scrollLeft);
+            }
+
+            rootElement.style.scrollBehavior = 'auto';
+        }
+
+        function enableScroll() {
+            window.onscroll = function () { }
+            rootElement.style.scrollBehavior = 'smooth';
+            // localStorage.setItem('opened', 'true');
+            playAudio();
+        }
+
+        function playAudio() {
+            song.volume = 0.3;
+            audioIconWrapper.style.display = 'flex';
+            song.play();
+            isPlaying = true;
+        }
+
+        audioIconWrapper.onclick = function () {
+            if (isPlaying) {
+                song.pause();
+                audioIcon.classList.remove('bi-disc');
+                audioIcon.classList.add('bi-pause-circle');
+            } else {
+                song.play();
+                audioIcon.classList.add('bi-disc');
+                audioIcon.classList.remove('bi-pause-circle');
+            }
+
+            isPlaying = !isPlaying;
+        }
+
+        // if (!localStorage.getItem('opened')) {
+        //   disableScroll();
+        // }
+        disableScroll();
+    </script>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            const form = document.getElementById('my-form');
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const action = e.target.action;
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                })
+                    .then(() => {
+                        alert("Konfirmasi kehadiran berhasil terkirim!");
+                    })
+            });
+        });
+    </script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('n') || '';
+        const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+        const namaContainer = document.querySelector('.hero h4 span');
+        namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
+
+        document.querySelector('#nama').value = nama;
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+
+            const typewriters = document.querySelectorAll(".typewriter");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const text = target.getAttribute("data-text");
+                        let index = 0;
+                        target.innerHTML = "";
+
+                        function typeEffect() {
+                            if (index < text.length) {
+                                target.innerHTML += text.charAt(index);
+                                index++;
+                                setTimeout(typeEffect, 40);
+                            }
+                        }
+
+                        typeEffect();
+                        observer.unobserve(target);
+                    }
+                });
+            });
+
+            typewriters.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Aos -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
 </body>
 
 </html>

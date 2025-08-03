@@ -60,7 +60,7 @@ body {
 }
 
 .mynavbar {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3) !important;
   backdrop-filter: blur(4px);
 }
 
@@ -91,7 +91,9 @@ body {
 .home h2,
 .info h2,
 .story h2,
-.galerry h2 {
+.gallery h2,
+.rsvp h2,
+.gifts h2 {
   color: var(--pink);
   font-family: "Sacramento";
   font-size: 5rem;
@@ -174,13 +176,16 @@ body {
 }
 
 .story,
-.galerry {
+.gallery,
+.rsvp,
+.gifts {
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
 .story span,
-.galerry span {
+.gallery span,
+.gifts span {
   text-transform: uppercase;
   color: #666;
   font-size: 0.9rem;
@@ -190,7 +195,9 @@ body {
 }
 
 .story p,
-.galerry p {
+.gallery p,
+.rsvp p,
+.gifts p {
   font-size: 1rem;
   font-weight: 300;
 }
@@ -292,8 +299,92 @@ body {
   right: auto;
 }
 
-.galerry {
+.gallery {
   background-color: #f5f5f5;
+}
+
+.rsvp {
+  background-color: var(--bg);
+}
+
+.rsvp h2 {
+  font-size: 4.5rem;
+}
+
+.rsvp p {
+  color: white;
+}
+
+.rsvp form label {
+  color: white;
+}
+
+.rsvp button {
+  background-color: var(--pink);
+  color: white;
+  border: 1px solid var(--pink);
+}
+
+.rsvp button:hover {
+  background-color: white;
+  color: var(--pink);
+  border: 1px solid white;
+}
+
+footer {
+  padding: 3rem;
+  background-color: var(--pink);
+  color: white;
+}
+
+footer a {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer li {
+  list-style: none;
+  display: inline;
+  margin: 0.5rem;
+}
+
+.rekening-logo {
+  height: 40px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.audio-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Media Query */
@@ -303,11 +394,13 @@ body {
     transform: translateX(-50%) translateY(45px);
   }
 }
-/* Laptop */
+
+/* laptop */
 @media (max-width: 992px) {
   html {
     font-size: 75%;
   }
+
   .simply-countdown > .simply-section {
     padding: 70px;
   }
@@ -322,7 +415,7 @@ body {
 
   .timeline li .timeline-image {
     left: 15px;
-    margin: 45px;
+    margin-left: 45px;
     top: 16px;
   }
 
@@ -346,7 +439,7 @@ body {
   }
 }
 
-/* Tablet */
+/* tablet */
 @media (max-width: 768px) {
   html {
     font-size: 65%;
@@ -362,24 +455,77 @@ body {
     text-align: center;
   }
 
-  .sticky-top {
-    overflow: hidden;
-  }
-
   .timeline li .timeline-image {
     width: 140px;
     height: 140px;
   }
 }
 
-/* Mobile phone */
+/* mobile phone */
+
 @media (max-width: 576px) {
   html {
     font-size: 60%;
   }
 
+  /* Kustomisasi untuk Tombol Hamburger dan Menu */
+  .mynavbar .navbar-toggler {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .mynavbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  /* Mengatur posisi dan ukuran menu offcanvas */
+  .offcanvas-end {
+    width: 100% !important; /* Memaksa lebar menu 100% */
+    max-width: 300px;
+
+    /* Aturan penting untuk memposisikan menu di kanan secara konsisten */
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+
+    /* Menghilangkan animasi pergerakan */
+    transition: none !important;
+
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: none !important;
+  }
+
+  .offcanvas-body {
+    background-color: #f8f9fa !important;
+  }
+
+  /* Mengatur ukuran teks dan tampilan menu */
+  .mynavbar .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mynavbar .nav-item {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .mynavbar .nav-link {
+    font-size: 1.5rem;
+    padding: 10px;
+    display: block;
+    color: #000;
+    text-align: center !important;
+  }
+
   .simply-countdown > .simply-section {
-    padding: 45px;
+    padding: 30px;
     margin: 3px;
   }
 
