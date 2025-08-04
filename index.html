@@ -324,7 +324,54 @@
     </section>
     <!-- Section Gallery Start -->
 
+    <!-- gpt -->
     <section id="rsvp" class="rsvp">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-10 text-center">
+                    <h2 data-aos="fade-up">Kirim Ucapan & Doa</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        Bagikan doa dan harapan terbaik Anda untuk kami.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-12 text-center">
+                    <form method="POST"
+                        action="https://script.google.com/macros/s/AKfycbznletxe-C9j2q_U95HG9HPkoxFBwrn5eD-tAv-ScuEpwXTK_nWJNoi_mjgs9Z-DvksbA/exec"
+                        id="my-form">
+
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control text-center" id="nama" name="nama" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ucapan" class="form-label">Ucapan & Doa</label>
+                            <textarea class="form-control text-center" id="ucapan" name="ucapan" rows="3"
+                                required></textarea>
+                        </div>
+
+                        <div class="text-center" style="margin-top: 35px;">
+                            <button class="btn btn-primary" type="submit">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8 col-10 text-center">
+                    <h4>Ucapan dari Sahabat & Keluarga</h4>
+                    <div id="ucapan-list" class="ucapan-list-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- gpt -->
+
+    <!-- <section id="rsvp" class="rsvp">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center">
@@ -364,16 +411,18 @@
                     <button class="btn btn-primary">Kirim</button>
                 </div>
             </form>
-
         </div>
-    </section>
+    </section> -->
+    <!-- Section Gallery End -->
 
+    <!-- gifts section start -->
     <section id="gifts" class="gifts">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center">
                     <h2 data-aos="fade-up">Gifts</h2>
-                    <p data-aos="fade-up" data-aos-delay="200">Terimakasih telah mengisi kebahagiaan dan kegembiraan di
+                    <p data-aos="fade-up" data-aos-delay="200">Terimakasih telah mengisi kebahagiaan dan
+                        kegembiraan di
                         pernikahan kami dengan kehadiran dan
                         hadiah indah anda.
                     </p>
@@ -396,7 +445,9 @@
             </div>
         </div>
     </section>
+    <!-- gifts section end -->
 
+    <!-- footer start -->
     <footer>
         <div class="container">
             <div class="row">
@@ -413,6 +464,8 @@
             </div>
         </div>
     </footer>
+    <!-- footer end -->
+
 
     <div class="audio-container">
         <audio id="song" autoplay loop>
@@ -503,25 +556,6 @@
         disableScroll();
     </script>
 
-
-    <script>
-        window.addEventListener("load", function () {
-            const form = document.getElementById('my-form');
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                const data = new FormData(form);
-                const action = e.target.action;
-                fetch(action, {
-                    method: 'POST',
-                    body: data,
-                })
-                    .then(() => {
-                        alert("Konfirmasi kehadiran berhasil terkirim!");
-                    })
-            });
-        });
-    </script>
-
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const nama = urlParams.get('n') || '';
@@ -571,12 +605,66 @@
     <!-- Aos -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- Javascript -->
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+    <!-- gpt -->
+    <script>
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbznletxe-C9j2q_U95HG9HPkoxFBwrn5eD-tAv-ScuEpwXTK_nWJNoi_mjgs9Z-DvksbA/exec'; // Pastikan ini URL yang benar
+        const ucapanList = document.getElementById('ucapan-list');
+
+        // Fungsi untuk memuat ucapan dari Google Sheets
+        const loadUcapan = async () => {
+            try {
+                const response = await fetch(scriptURL);
+                const data = await response.json();
+
+                ucapanList.innerHTML = ''; // Kosongkan daftar ucapan sebelum memuat yang baru
+
+                data.forEach(ucapan => {
+                    const newUcapan = document.createElement('div');
+                    newUcapan.innerHTML = `
+                        <div class="card p-3 mb-3">
+                            <h5 class="card-title">${ucapan.nama}</h5>
+                            <p class="card-text">${ucapan.ucapan}</p>
+                        </div>
+                    `;
+                    ucapanList.prepend(newUcapan);
+                });
+            } catch (error) {
+                console.error('Error loading ucapan:', error);
+            }
+        };
+
+        // Panggil fungsi loadUcapan saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', loadUcapan);
+
+        // Tambahkan ucapan baru ke dalam daftar setelah dikirim
+        const form = document.getElementById('my-form');
+        form.addEventListener('submit', async e => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            // Kirim data ke Google Sheets
+            try {
+                await fetch(scriptURL, { method: 'POST', body: formData });
+                form.reset();
+                // Setelah berhasil, muat ulang daftar ucapan
+                loadUcapan();
+                alert("Ucapan berhasil terkirim!");
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert("Terjadi kesalahan saat mengirim ucapan.");
+            }
+        });
+    </script>
+    <!-- gpt -->
+
 
 </body>
 
